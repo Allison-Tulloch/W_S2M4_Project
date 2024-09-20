@@ -5,7 +5,91 @@
   <meta charset="UTF-8">
   <style>
     /* 👉 Task 1- Apply the reset found on this page: https://www.joshwcomeau.com/css/custom-css-reset/ */
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  font-family: Arial, Helvetica, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
 
+#headerTop {
+  color: white;
+  padding: 10px;
+  background: rgb(8, 5, 39);
+}
+
+#headerBottom, .email {
+  display: inline-block;
+}
+
+span {
+  margin-right: 10px;
+}
+
+#uno {
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+#headerBottom {
+  border: gray solid 1px;
+  padding: 5px;
+}
+
+#headerBottom div {
+  display: inline-block;
+}
+
+#compose {
+  background: rgb(34, 121, 221);
+  color:rgb(8, 5, 39);
+  font-weight: bold;
+  padding: 5px;
+  border-radius: 30%;
+  margin-right: 5px;
+  cursor: pointer;
+}
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
   </style>
   <style>
     /* 👉 Task 2- Target the body element.
@@ -68,7 +152,7 @@
 
 <body>
   <div id="instructions">
-    <h1>HTML & CSS II</h1>
+  <h1>HTML & CSS II</h1>
     <p>Please load this file in VSCode and Chrome, and open the Elements tab, Sources sub-tab, in Chrome Dev Tools.</p>
     <p>Work through the challenges found inside both style tags in this document.</p>
     <p>You will find a screenshot of the end result inside the design folder.</p>
@@ -78,15 +162,15 @@
     <header>
       <div id="headerTop">
         <div>
-          <span>Super Mail</span>
-          <span>Jess</span>
+          <span id="uno">Super Mail</span>
+          <span id="dos">Jess</span>
         </div>
         <div>
           <input type="text" placeholder="Search Mail" />
         </div>
       </div>
       <div id="headerBottom">
-        <div>Compose</div>
+        <div><button id="compose">Compose</button></div>
         <div>
           <button>All mail</button>
           <button>Unread</button>
